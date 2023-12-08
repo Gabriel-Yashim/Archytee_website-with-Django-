@@ -1,0 +1,133 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+    {% block page_seo %}
+    <meta name="description" content=">Explore our curated selection of stunning properties. Your dream home is just a click away.">
+    <meta name="keywords" content="
+    cheap houses for sale in abuja,3 bedroom house for sale in abuja,
+    2 bedroom house for sale in abuja,cheap houses for rent in abuja,3 bedroom house for rent in abuja,2 bedroom house for rent in abuja">
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+
+    <title>{% block title %} Discover Your Dream Property | Archytee Global Concept Limited {% endblock %}</title>
+    
+
+    <!-- header and nav bar  -->
+    {% block hero_section %} 
+    <!-- header ends here  -->
+    <div class="container">
+        <div class="hero proper">
+            <div class="layer">
+                <div class="slider-container">
+                    
+                    <div class="slide-images">
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/properties/Hero2.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/properties/Hero3.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/properties/Hero4.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/properties/Hero1.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">        
+                    <div class="pr-intro">
+                        <h1>
+                            Discover <span>Your Dream</span> Property
+                        </h1>
+                        <h2>Explore our curated selection of stunning properties. <span>Your dream</span> home is just a click away.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- hero section ends here  -->
+    {% block body %} 
+    <section class="props">
+        <div class="container">
+            {% if properties_lease %}
+            <h2>Properties for Lease</h2>
+            {% else %}
+            <h2> </h2>
+            {% endif %}
+
+
+            
+            <div class="grid">
+            {% for property in properties %}
+            {% if property.category == 'Lease' %}
+                <div class="hidden">
+                    <div class="links">
+                        <main>
+                            <a class="btn" href="{% url 'property_details' property.slug %}">Read More</a>
+                            <a class="btn" href="{% url 'contact' %}#talk">Contact Us</a>
+                        </main>
+                    </div>
+
+                    <img src="{{ property.image1.url }}" alt="property.slug">
+                    
+                    <h3>
+                        {{ property.title}}
+                    </h3>
+                    <p>
+                        {{ property.text }}
+                    </p>
+                   
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+            {% if properties_sale %}
+            <h2>Properties for Sale</h2>
+            {% else %}
+            <h2> </h2>
+            {% endif %}
+
+            <div class="grid">
+            {% for property in properties %}
+            {% if property.category == 'Sale' %}
+                <div class="hidden">
+                    <img src="{{ property.image1.url }}" alt="{{ property.slug }}">
+                    <div class="links">
+                        <main>
+                            <a class="btn" href="{% url 'property_details' property.slug %}">Read More</a>
+                            <a class="btn" href="{% url 'contact' %}#talk">Contact Us</a>
+                        </main>
+                    </div>
+                    <h3>
+                        {{ property.title }}
+                    </h3>
+                    <p>
+                        {{ property.text }}
+                    </p>
+                </div>
+                {% endif %}
+                {% endfor %}             
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <!-- starting the footer  -->
+    
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    <script>
+        // toggle button functionality on tab and mobile view
+        const mainmenu = document.querySelector('.mainmenu');
+        const openmenu = document.querySelector('.openmenu');
+
+
+        openmenu.addEventListener('click', ()=> {
+            mainmenu.classList.toggle('active')
+        });
+
+    </script>
+    {% endblock %}

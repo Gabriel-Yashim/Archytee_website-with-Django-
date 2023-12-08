@@ -1,0 +1,151 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+    {% block page_seo %}
+    <meta name='robots' content='index, follow'>
+    <meta name="description" content="Global Concept Limited: Your Partner in Architectural Innovation. We are a pioneering force in Design and Build Technology, uniting visionary concepts with awe-inspiring structures. With a legacy marked by dedication, learning, and excellence, we have set benchmarks in Nigeria's construction industry. We don't just construct buildings; we craft masterpieces that captivate and inspire.">
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+
+    
+    <title>{% block title %}About Archytee Global Concept Limited {% endblock %}</title>
+    <!-- Starting the Hero section  -->
+    <!-- header and nav bar  -->
+    {% block body %} 
+    <!-- header ends here  -->
+    <div id="top"></div>
+    <div class="about-hero">
+        <div class="layer">
+            <!-- <img class="layer" src="{% static 'archytee/images/backgrounds/bg_about.jpg' %}"> -->
+            <div class="container">        
+                <div class="about-head">
+                    <h2>about <span>us</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hero section ends here  -->
+    <section class="about-bg">
+        <div class="container hidden">
+            <h2>background</h2>
+            <div class="row about-s1">
+                <div class="col hidden img">
+                    <img src="{% static 'archytee/images/backgrounds/pj_5.jpg' %}" alt="Archytee_Global_Concept_LTD">
+                </div>
+                <div class="col hidden txt">
+                    <p>
+                        <abbr>A</abbr>rchytee Global Concept Limited stands as a beacon of innovation and expertise in the dynamic world of Design and Build Technology. Our journey began with a deep-rooted passion for architecture and a relentless commitment to transforming visionary concepts into tangible, awe-inspiring structures. We take pride in the fact that our work has left an indelible mark on Nigeria's construction industry, setting benchmarks for quality, innovation, and sustainable practices.
+                    </p>
+                    <p>
+                        Over the years, we have meticulously crafted our reputation as a trailblazer in the construction and architectural planning sector. Our story is one marked by unwavering dedication, continuous learning, and an unyielding pursuit of excellence. With every project we've undertaken, we've elevated our craft, delivering not just buildings but masterpieces that captivate and inspire. Our success is not only measured by the structures we've built but by the communities we've enriched and the aspirations we've fulfilled. Each project is a testament to our ability to turn ambitious visions into concrete reality, merging the artistry of design with the precision of technology.
+                    </p>
+                    <p>
+                        At Archytee Global Concept Limited, we're more than a construction company; we're visionaries, craftsmen, and pioneers. We're driven by the belief that every project presents an opportunity to redefine what's possible. As we continue this remarkable journey, we remain committed to pushing the boundaries of design and construction, leaving a legacy that inspires generations to come.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="up">
+        <a href="{% url 'about' %}#top">
+            <i class="fa-solid fa-2xl fa-circle-up" style="color: #ff6600;"></i>
+        </a>
+    </div>
+    <section class="about-bg about-s2">
+        <div class="container hidden">
+            <div class="row">
+                <div class="col hidden">
+                    <img src="{% static 'archytee/images/backgrounds/mission.jpg' %}" alt="Archytee-mission">
+                </div>
+                <i class="fa-regular fa-circle"></i>
+                <div class="col hidden">
+                    <h3>our mission</h3>
+                    <p>At <span>Archytee Global Concept Limited</span>, our mission is to revolutionize the construction industry through a harmonious fusion of design and technology. We are committed to delivering top-notch consulting and contracting services, catering to both commercial and industrial ventures. Our unwavering dedication to modernizing the construction landscape drives us to employ the latest technologies and prioritize safety in every facet of our project planning. We aim to redefine the standards of excellence in the construction sector, one project at a time.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col hidden">
+                    <h3>our vision</h3>
+                    <p>Our vision at <span>Archytee Global Concept Limited</span> is to be at the forefront of pioneering construction and architectural solutions in Nigeria and beyond. We envision a future where our innovative designs and sustainable building practices become the standard for the industry. As we continue to grow and evolve, we remain dedicated to shaping skylines, enhancing communities, and leaving a lasting legacy of exceptional craftsmanship. We eagerly anticipate the opportunity to partner with you on your future ventures and are committed to exceeding your expectations every step of the way.</p>
+                </div>
+                <i class="fa-solid fa-circle"></i>
+                <div class="col hidden">
+                    <img src="{% static 'archytee/images/backgrounds/vision.jpg' %}" alt="Archytee-vision">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col hidden">
+                    <img src="{% static 'archytee/images/backgrounds/value.jpg' %}" alt="archytee-value">
+                </div>
+                <i class="fa-regular fa-circle"></i>
+                <div class="col hidden">
+                    <h3>our core values</h3>
+                    <p>Our core values are deeply rooted in our DNA. We believe in:
+                        <ul>
+                            <li>
+                                <span>Innovation:</span> We embrace and harness the power of cutting-edge technologies to bring creativity and uniqueness to every project.
+                            </li>
+                            <li>
+                                <span>Safety:</span> We prioritize the safety of all stakeholders, ensuring that every structure we build stands as a testament to our commitment to secure construction practices.
+                            </li>
+                            
+                            <li>
+                                <span>Excellence:</span> Our pursuit of excellence drives us to deliver projects that exceed expectations and set new benchmarks in the industry.
+                            </li>
+                            
+                            <li>
+                                <span>Collaboration:</span> We value collaborative partnerships and believe in working closely with our clients, architects, and stakeholders to transform visions into reality.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-bg">
+        <div class="container hidden">
+            <h2 class="lower">meet the CEO</h2>
+            <div class="row about-s1">
+                <div class="col hidden imgE">
+                    <img src="{% static 'archytee/images/backgrounds/res_1.jpeg' %}" alt="Archytee_Global_Concept_LTD">
+                </div>
+                <div class="col hidden txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, laudantium molestiae quo repellendus obcaecati, excepturi, vitae neque enim quod facilis inventore nulla officiis consectetur odio quidem blanditiis nesciunt repudiandae accusamus eum repellat cum porro error tempora et. Qui, dolor nulla eaque ullam, consequatur dolores praesentium laboriosam ex maxime molestias impedit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea nisi alias eveniet debitis molestias qui similique eaque eum itaque quia sit, hic saepe harum. Obcaecati repellat facilis tempore beatae asperiores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-bg">
+        <div class="container hidden">
+            <h2 class="lower">meet our team leads</h2>
+            <div class="row about-s1">
+                <div class="col hidden imgE">
+                    <img src="{% static 'archytee/images/backgrounds/engineers.jpg' %}" alt="Archytee_Global_Concept_LTD">
+                </div>
+                <div class="col hidden txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, laudantium molestiae quo repellendus obcaecati, excepturi, vitae neque enim quod facilis inventore nulla officiis consectetur odio quidem blanditiis nesciunt repudiandae accusamus eum repellat cum porro error tempora et. Qui, dolor nulla eaque ullam, consequatur dolores praesentium laboriosam ex maxime molestias impedit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea nisi alias eveniet debitis molestias qui similique eaque eum itaque quia sit, hic saepe harum. Obcaecati repellat facilis tempore beatae asperiores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    <!-- <script src="./js/script.js"></script> -->
+    <script>
+        // toggle button functionality on tab and mobile view
+        const mainmenu = document.querySelector('.mainmenu');
+        const openmenu = document.querySelector('.openmenu');
+
+
+        openmenu.addEventListener('click', ()=> {
+            mainmenu.classList.toggle('active')
+        });
+    </script>
+    {% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+    {% block page_seo %}
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+
+    
+    <title>{% block title %} Properties {% endblock %}</title>
+
+{% block body %}     
+    <section class="props_det details">
+        <div class="container">
+            {% for property in properties %}
+            {% if property_slug == property.slug %}
+            <h2><span>Properties for {{ property.category }}</span></h2>
+
+            <img src="{{ property.image1.url }}" class="main_img" alt="{{ property.slug }}">
+
+            <h3>{{ property.title }}</h3>
+
+            <p>
+                {{ property.LongText }}
+            </p>
+            {% endif %}
+            {% endfor %}
+    </section>
+
+    <section class="props_det">
+        
+        <h2><span>Explore More Properties</span></h2>
+        
+        <div class="slider-wrapper">
+            <div class="row review slider">
+                {% for property in properties %}
+                {% if property_slug == property.slug %}
+                <div class="none"></div>
+                {% else %}
+                <div class="col hidden" id="slide-{{ property.slide }}">
+                    <a href="{% url 'property_details' property.slug %}">
+                        <img src="{{ property.image1.url }}" alt="{{ property.slug }}">
+
+                        <b>{{ property.title }}</b>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}    
+                
+            </div>
+        </div>
+    </section>
+{% endblock %}
+    <!-- starting the footer  -->
+   
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    <script src="./js/script.js"></script>
+    {% endblock %}

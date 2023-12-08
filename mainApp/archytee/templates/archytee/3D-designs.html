@@ -1,0 +1,98 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+{% block page_seo %}
+    <meta name="description" content="Discover the Future of Architectural Design with Archytee Global Concept Limited. Our 3D Architectural Designs offer a visionary glimpse into your dream projects. From concept to reality, we redefine design with our cutting-edge 3D solutions. Experience the power of innovation and imagination as we transform ideas into captivating visualizations. Elevate your projects with our immersive and detail-rich 3D designs that breathe life into your architectural dreams. Trust us to bring your visions to life and set new standards in architectural excellence. Explore our portfolio of conceptual 3D Architectural Designs and step into a world where your ideas meet reality seamlessly. Your vision, our expertise, a design partnership that shapes the future.">
+    <meta name='robots' content='index, follow'>
+{% endblock %}
+    
+    <title>{% block title %} Immersive 3D Architectural Designs: Shaping Your Vision | Archytee Global Concept Limited {% endblock %}</title>
+
+    
+    <!-- header and nav bar  -->
+    {% block body %} 
+    <!-- header ends here  -->
+    <section class="proj">
+        <div class="container hidden">
+            <h1>
+                our <span>3D</span> architectural <span>designs</span>
+            </h1>
+            <p class="head">Experience the future of architectural design with Archytee Global Concept Limited. We give the best conceptual 3D Architectural Designs.</p>
+            <div class="projects">
+                {% for project in designs %}
+                {% if project.position == 1 %}
+                <div class="row">
+                    <div class="col hidden img{{project.position}}">
+                        {% if project.image1 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image1.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image2 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image2.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image3 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image3.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image4 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image4.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+
+                        <div class="btn">
+                            <button class="left" onclick="plusDivs{{project.slide}}(-1)">&#10094;</button>
+                            <button class="right" onclick="plusDivs{{project.slide}}(+1)">&#10095;</button>
+                        </div>
+                    </div>
+                
+                    <div class="col hidden">
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.text }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for project in designs %}
+                {% if project.position == 2 %}
+
+                <div class="row">
+                    <div class="col hidden">
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.text }}</p>
+                    </div>
+
+                    <div class="col hidden img{{project.position}}">
+                        {% if project.image1 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image1.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image2 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image2.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image3 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image3.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image4 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image4.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+
+                        <div class="btn">
+                            <button class="left" onclick="plusDivs{{project.slide}}(-1)">&#10094;</button>
+                            <button class="right" onclick="plusDivs{{project.slide}}(+1)">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    
+
+
+    <!-- starting the footer  -->
+   
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    
+    {% endblock %}

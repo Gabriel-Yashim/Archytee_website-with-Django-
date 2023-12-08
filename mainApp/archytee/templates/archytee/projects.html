@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/70aaf8a6ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Projects</title>
+
+</head>
+<body>
+
+    <div class="projects">
+        <div class="row">
+            <div class="col">
+                <img class="mySlides" src="./img/3d_12.jpeg">
+                <img class="mySlides" src="./img/3d_3.jpeg">
+                <img class="mySlides" src="./img/3d_6.jpeg">
+                <img class="mySlides" src="./img/3d_7.jpeg">
+            
+                <div>
+                    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                </div>
+            </div>
+        
+            <div class="col">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus reprehenderit officia rerum recusandae molestias! Voluptatem suscipit fugit vero porro, laudantium neque distinctio repellendus architecto quasi, voluptas animi explicabo cumque temporibus, voluptates ullam eius omnis repellat. Sunt itaque dolor nulla unde nam nobis. Commodi ipsum quia eos fugit, vitae voluptatum distinctio.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus reprehenderit officia rerum recusandae molestias! Voluptatem suscipit fugit vero porro, laudantium neque distinctio repellendus architecto quasi, voluptas animi explicabo cumque temporibus, voluptates ullam eius omnis repellat. Sunt itaque dolor nulla unde nam nobis. Commodi ipsum quia eos fugit, vitae voluptatum distinctio.</p>
+            </div>
+
+            <div class="col">
+                <img class="mySlides1" src="./img/3d_12.jpeg">
+                <img class="mySlides1" src="./img/3d_3.jpeg">
+                <img class="mySlides1" src="./img/3d_6.jpeg">
+                <img class="mySlides1" src="./img/3d_7.jpeg">
+            
+                <div>
+                    <button class=" " onclick="plusDivs1(-1)">&#10094;</button>
+                    <button class="" onclick="plusDivs1(+1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+
+        var slideIndex1 =1;
+        showDivs1(slideIndex1);
+
+        function plusDivs1(m) {
+        showDivs1(slideIndex1 += m);
+        }
+
+        function showDivs1(m) {
+        var j;
+        var y = document.getElementsByClassName("mySlides1");
+        if (m > y.length) {slideIndex1 = 1}
+        if (m < 1) {slideIndex1 = x.length} ;
+        for (j = 0; j < y.length; j++) {
+            y[j].style.display = "none";
+        }
+        y[slideIndex1-1].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

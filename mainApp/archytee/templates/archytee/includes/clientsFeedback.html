@@ -1,0 +1,48 @@
+<div class="col hidden" id="slide-{{ client.slide}}">
+    <span>
+        {% if client.rating == 1 %}
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+
+        {% elif client.rating == 2 %}
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+
+        {% elif client.rating == 3 %}
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+
+        {% elif client.rating == 4 %}
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+
+        {% else %}
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+
+        {% endif %}
+    </span>
+    <p><i class="fa-solid fa-quote-left fa-beat fa-sm" style="color: #ff6600;"></i> {{client.feedback}} <i class="fa-solid fa-quote-right fa-beat fa-sm" style="color: #ff6600;"></i></p>
+    <div class="client-info">
+        <img src="{{ client.image.url }}" alt="archytee-client">
+        <div class="Cname">
+            <h4>{{ client.clientName}}</h4>
+            <small>{{ client.clientDesignation}}</small>
+        </div>
+    </div>
+</div>

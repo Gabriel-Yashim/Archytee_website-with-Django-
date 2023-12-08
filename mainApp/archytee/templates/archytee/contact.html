@@ -1,0 +1,117 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+    {% block page_seo %}
+    <meta name="description" content="send us a message today at archyteeglobalconceptltd@gmail.com">
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+
+    
+    <title>{% block title %}Contact Archytee Global Concept Limited {% endblock %}</title>
+
+    <!-- header ends here  -->
+    {% block body %} 
+    <div class="contact-intro">
+        <div class="container hidden">        
+            <h1>we <span>guarantee dedication </span> and provide <span>top-notch service!</span></h1>
+        
+        </div>
+    </div>
+    <!-- hero section ends here  -->
+    <section id="talk">
+        <div class="container hidden">
+            <div class="message">
+                <div class="grid">
+                    <div class="col hidden img">
+                        <img src="{% static 'archytee/images/backgrounds/pj_5.jpg' %}" alt="">
+                    </div>
+                    <div class="col hidden sms" >
+                        <h2>send us a <span>message today</span> </h2>
+                        
+                        <form action="{% url 'contact' %}" method="POST">
+                            {% csrf_token %}
+                            
+                            <!-- <label for="{{ form.name.id_for_label }}">Your Name:</label> -->
+                            <input class="line1" type="text" placeholder="Enter your Name" name="{{ form.name.name }}">
+                            {{ form.name.errors }}
+                        
+                            <!-- <label for="{{ form.phone.id_for_label }}">Your Phone Number:</label> -->
+                            <input class="line2" type="number" placeholder="Enter Your Phone Number" name="{{ form.phone.name }}">
+                            {{ form.phone.errors }}
+                        
+                            <!-- <label for="{{ form.email.id_for_label }}">Your Email:</label> -->
+                            <input class="line3" type="email" placeholder="Enter your Email" name="{{ form.email.name }}" required>
+                            {{ form.email.errors }}
+                        
+                            <!-- <label for="{{ form.message.id_for_label }}">Your Message:</label> -->
+                            <textarea name="{{ form.message.name }}" cols="30" rows="3" placeholder="Enter your message"></textarea>
+                            {{ form.message.errors }}
+                        
+                            <button type="submit">Send Message</button>
+                        </form>
+                        
+
+                        {% if message_sent %}
+                            <p class="appointment">Your message has been sent. Thank you!</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container hidden">
+            <div class="location">
+                <div class="grid">
+                    <div class="col hidden">
+        
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15758.037622037933!2d7.4248482!3d9.108376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e752b7054d391%3A0xc8c5698995bbcffa!2sArchytee%20Global%20Concept%20LTD!5e0!3m2!1sen!2sng!4v1694435401735!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+                    </div>
+                    <div class="col hidden">
+                        <div class="contact-details">
+                            <h2>find us <span>today</span> </h2>
+                            <div class="grid">
+                                <div class="address">
+                                    <i class="fa-solid fa-house-user"></i>
+                                    <h4>Gwarinpa, FCT Abuja</h4>
+                                    <p>Plot 58 & 60, Along 24 Crescent, Off 2nd Avenue</p>
+                                </div>
+            
+                                <div class="phone">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <h4>+234 806 303 9220</h4>
+                                    <h4>+234 818 511 5604</h4>
+                                    <p>Monday to Friday (9am to 5pm).</p>
+                                </div>
+            
+                                <div class="email">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <h4>archyteeglobalconceptltd@gmail.com</h4>
+                                    <h4>archyte@yahoo.com</h4>
+                                    <p>Send us an email anytime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    
+    <!-- starting the footer  -->
+    <!-- footer ends here  -->
+    <!-- <script src="./js/script.js"></script> -->
+    {% block page_javascript %}
+    <script>
+        // toggle button functionality on tab and mobile view
+        const mainmenu = document.querySelector('.mainmenu');
+        const openmenu = document.querySelector('.openmenu');
+
+
+        openmenu.addEventListener('click', ()=> {
+            mainmenu.classList.toggle('active')
+        });
+    </script>
+    {% endblock %}

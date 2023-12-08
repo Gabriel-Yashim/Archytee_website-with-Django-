@@ -1,0 +1,93 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+{% block page_seo %}
+    <meta name="description" content="Discover the Art of Customized Living with Residential Buildings from Archytee Global Concept Limited. Custom houses that reflect your goals and lifestyle are created by our creative and hardworking staff. Take a look at our housing options now.">
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+    
+    <title>{% block title %} Custom Residential Creations | Archytee Global Concept Limited {% endblock %}</title>
+
+    {% block body %} 
+    <!-- header ends here  -->
+    <section class="proj">
+        <div class="container hidden">
+            <h1>
+                Let us <span>fashion</span> your <span>Home</span> according to your <span>Taste</span>
+            </h1>
+            <p class="head">With a blend of innovation, craftsmanship, and unwavering commitment, we create residential spaces that reflect your unique lifestyle and aspirations.</p>
+            <div class="projects">
+                {% for project in residentials %}
+                {% if project.position == 1 %}
+                <div class="row">
+                    <div class="col hidden img{{project.position}}">
+                        {% if project.image1 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image1.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image2 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image2.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image3 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image3.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image4 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image4.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+
+                        <div class="btn">
+                            <button class="left" onclick="plusDivs{{project.slide}}(-1)">&#10094;</button>
+                            <button class="right" onclick="plusDivs{{project.slide}}(+1)">&#10095;</button>
+                        </div>
+                    </div>
+                
+                    <div class="col hidden">
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.text }}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for project in residentials %}
+                {% if project.position == 2 %}
+
+                <div class="row">
+                    <div class="col hidden">
+                        <h2>{{ project.title }}</h2>
+                        <p>{{ project.text }}</p>
+                    </div>
+
+                    <div class="col hidden img{{project.position}}">
+                        {% if project.image1 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image1.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image2 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image2.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image3 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image3.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+                        {% if project.image4 %}
+                            <img class="mySlides{{project.slide}}" src="{{ project.image4.url }}" alt="{{ project.slug}}">
+                        {% endif %}
+
+                        <div class="btn">
+                            <button class="left" onclick="plusDivs{{project.slide}}(-1)">&#10094;</button>
+                            <button class="right" onclick="plusDivs{{project.slide}}(+1)">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    
+{% endblock %}

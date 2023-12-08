@@ -1,0 +1,162 @@
+{% extends 'archytee/base/base.html' %}
+
+{% load static %}
+
+    {% block page_seo %}
+    <meta name="description" content="Archytee Global Concept Limited specializes in architectural design and offers cutting-edge 3D Architectural Rendering services, turning your dreams into visually stunning realities. With 50 successful projects under our belt, we bring your dream home to life and provide state-of-the-art commercial solutions for your business. We believe in innovation, quality, and safety in construction. Our recent work showcases our commitment to beautiful and innovative spaces.">
+    <meta name="keywords" content="Best architectural design firm in nigeria,architectural design firm in nigeria,architectural design firm in abuja,best architectural design firm in abuja,top architectural design firm in nigeria">
+    <meta name='robots' content='index, follow'>
+    {% endblock %}
+
+    
+    <title>{% block title %} Archytee Global Concept Limited | Home {% endblock %}</title>
+    
+    <!-- Starting the Hero section  -->
+    <!-- header and nav bar  -->
+    <!-- header ends here  -->
+    {% block hero_section %} 
+    <!-- <div class="container blank"> -->
+        <div class="hero">
+            <div class="layer">
+                <div class="slider-container">
+                    
+                    <div class="slide-images">
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/backgrounds/bg_1.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/backgrounds/bg_2.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/backgrounds/bg_3.jpg' %}">
+                        </div>
+                        <div class="img-container">
+                            <img class="bg" src="{% static 'archytee/images/backgrounds/bg_4.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">        
+                    <div class="intro">
+                        <h2>
+                            <span>we design and build incredible</span>
+                        </h2>
+                        <h1>architectures</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    <!-- </div> -->
+    <!-- hero section ends here  -->
+    <!-- section one starts here  -->
+    {% block body %} 
+    <div class="container">
+        <section class="one">
+            <div class="row hidden">
+                <div class="col hidden job">
+                    <div class="jobs">
+                        <h3>3D Architectural Rendering</h3>
+                        <p>Our 3D Architectural Rendering services open doors to limitless possibilities and unparalleled realism. <a href="{% url 'contact' %}#talk">Contact us</a> today to discuss your project and let us transform your dreams into visual masterpieces.</p>
+                        <small><a href="{% url 'designs' %}">50 Projects</a></small>
+                    </div>
+    
+                    <div class="jobs">
+                        <h3>Residential Structures</h3>
+                        <p>Ready to turn your dream home into a reality? <a href="{% url 'contact' %}#talk">Contact us</a> today to schedule a consultation and embark on the journey to your perfect residential structure.</p>
+                        <small><a href="{% url 'residential' %}">35 Projects</a></small>
+                    </div>
+    
+                    <div class="jobs">
+                        <h3>Commercial Projects</h3>
+                        <p>Are you prepared to start your business construction project? Make the first step toward fulfilling your vision for a successful commercial space by <a href="{% url 'contact' %}#talk">getting in touch</a> with us right away to arrange a consultation.</p>
+                        <small><a href="{% url 'commercial' %}">15 Projects</a></small>
+                    </div>
+                </div>
+    
+                <div class="col hidden jobb">
+                    <h2>
+                        <span>Building Dreams</span>: Your Vision, <span>Our Expertise</span>
+                    </h2>
+                    <p>Welcome to <span>Archytee Global Concept Limited</span>, where we understand that behind every building project lies a dream, a vision, and a purpose. Our commitment is to transform your dreams into concrete reality, leveraging our expertise, innovation, and passion for construction.</p>
+    
+                    <div class="img">
+                        <img id="img1" src="{% static 'archytee/images/backgrounds/pj_1.jpg' %}" alt="beautiful building">
+                        <img id="img2" src="{% static 'archytee/images/backgrounds/pj_2.jpg' %}" alt="beautiful building">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- section one ends here  -->
+    <marquee behavior="smooth" direction="left">
+        archytee <span class="mark">&star;</span> global <span class="mark">&star;</span> concept <span class="mark">&star;</span> limited
+    </marquee>
+
+    <div class="up">
+        <a href="{% url 'home' %}#top">
+            <i class="fa-solid fa-2xl fa-circle-up" style="color: #ff6600;"></i>
+        </a>
+    </div>
+
+    <!-- Starting section two -->
+    <div class="container">
+        <section class="two hidden">
+            <div class="grid">
+
+                <div class="intro">
+                    <h2>a look at our most recent <span>projects</span></h2>
+                    <p>As you browse this section, we invite you to envision the possibilities for your next construction endeavor. Whether you're seeking inspiration, evaluating our capabilities, or simply curious about our recent work, this section is your gateway to understanding why <span><b>Archytee Global Concept Limited</b></span> stands out in the construction industry.</p>
+                </div>
+
+                <!-- add a for loop -->
+                {% for project in recentProjects %}
+                <div class="col hidden {{ project.box }}">
+                    <img src="{{ project.image.url }}" alt="archytee-{{ project.slug }}">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.text }}</p>
+                    <small>
+                        <a href="{% url project.position %}">&nearrow;</a>
+                    </small>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </section>
+    </div>
+    <!-- section 2 ends here  -->
+    <div class="container">
+        <section class="three">
+            <div class="row client hidden">
+                <div class="intro">
+                    <h2>our client's <span>feedback</span></h2>
+                    <p>Here are some reviews and feedbacks from our esteemed clients.</p>
+                </div>    
+            </div>
+            <button class="prev-btn"><i class="fa-solid fa-arrow-left"></i></button>  
+            <button class="nxt-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            <div class="slider-wrapper">
+
+                <!-- for client in client_feedback -->
+
+                <div class="row review slider">
+                    {% for client in clientFeedback %}
+                    <!-- add includes 'path-to-html-file' with variable=value -->
+                    {% include 'archytee/includes/clientsFeedback.html' %}
+                    {% endfor %}
+
+                </div>
+                
+                <!-- endfor -->
+
+            </div>
+        </section>
+    </div>
+    {% endblock %}
+    <!-- end of section three  -->
+
+    <!-- starting the footer  -->
+    
+    <!-- footer ends here  -->
+    {% block page_javascript %} 
+    <script src="{% static 'archytee/javascript/script.js' %}"></script>
+    {% endblock %}

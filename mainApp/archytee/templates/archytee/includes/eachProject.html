@@ -1,0 +1,33 @@
+{% for project in projects %}
+
+<section class="proj">
+    <div class="container hidden">
+        <h1>
+            {{ project.mainTitle}}
+        </h1>
+        <p class="head"> {{ project.mainText }} </p>
+        <div class="projects">
+
+            <div class="row">
+                <div class="col hidden">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.text }}</p>
+                </div>
+
+                <div class="col hidden img2">
+                    <img class="mySlides1" src="{{ project.image1.url }}" alt="{{ project.slug}}">
+                    <img class="mySlides1" src="{{ project.image2.url }}" alt="{{ project.slug}}>
+                    <img class="mySlides1" src="{{ project.image3.url }}" alt="{{ project.slug}}>
+                    <img class="mySlides1" src="{{ project.image4.url }}" alt="{{ project.slug}}>
+                
+                    <div class="btn">
+                        <button class="left" onclick="plusDivs1(-1)">&#10094;</button>
+                        <button class="right" onclick="plusDivs1(+1)">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %}
